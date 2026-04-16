@@ -2046,30 +2046,32 @@
     }
 
     function enhanceSlide7(root) {
-      const face = root.querySelector('img[alt="Face Vital Scan"]');
-      const analyzing = byText(root, 'span', 'FACE VITAL SCAN')?.closest('div[style*="border-radius:999px"]');
-      const logo = root.querySelector('img[alt="Redcliffe Labs"]');
-      const pill = root.querySelector('.pill')?.closest('div');
-      const titles = Array.from(root.querySelectorAll('.ff')).slice(0, 3);
-      const rule = Array.from(root.querySelectorAll('div')).find((el) => el.style.width === '56px' && el.style.height === '3px');
-      const metricCards = Array.from(root.querySelectorAll('div[style*="border-radius:10px;padding:10px 14px"]')).slice(0, 7);
-      const metricBars = Array.from(root.querySelectorAll('div[style*="height:6px;overflow:hidden"] > div'));
-      const callout30 = byText(root, 'div', 'Zero contact. Zero equipment.')?.closest('div[style*="border-radius:10px"]');
-      const cta = byText(root, 'div', 'Try it at your next health camp.')?.closest('div[style*="border-radius:12px"]');
+  const leftPanel = Array.from(root.querySelectorAll('div')).find((el) => el.style.width === '998px' && el.style.height === '1080px');
+  const face = root.querySelector('img[alt="Face Vital Scan"]');
+  const analyzing = byText(root, 'span', 'FACE VITAL SCAN')?.closest('div[style*="border-radius:999px"]');
+  const logo = root.querySelector('img[alt="Redcliffe Labs"]');
+  const pill = root.querySelector('.pill')?.closest('div');
+  const titles = Array.from(root.querySelectorAll('.ff')).slice(0, 3);
+  const rule = Array.from(root.querySelectorAll('div')).find((el) => el.style.width === '56px' && el.style.height === '3px');
+  const metricCards = Array.from(root.querySelectorAll('div[style*="border-radius:10px;padding:10px 14px"]')).slice(0, 7);
+  const metricBars = Array.from(root.querySelectorAll('div[style*="height:6px;overflow:hidden"] > div'));
+  const callout30 = byText(root, 'div', 'Zero contact. Zero equipment.')?.closest('div[style*="border-radius:10px"]');
+  const cta = byText(root, 'div', 'Try it at your next health camp.')?.closest('div[style*="border-radius:12px"]');
 
-      mark(face, 'soft-zoom', 0.14);
-      mark(analyzing, 'fade-down', 0.18);
-      mark(logo, 'fade-down', 0.04);
-      mark(pill, 'fade-up', 0.1);
-      stagger(titles, 'slide-right', 0.18, 0.08);
-      mark(rule, 'grow-x', 0.42);
-      stagger(metricCards, 'slide-right', 0.52, 0.07);
-      stagger(metricBars, 'grow-x', 0.62, 0.05);
-      mark(callout30, 'scale-in', 1.02);
-      mark(cta, 'fade-up', 1.1);
-      pulse(face, 2.3);
-      pulse(callout30, 2.8);
-    }
+  mark(leftPanel, 'soft-zoom', 0.14);
+  mark(analyzing, 'fade-down', 0.18);
+  mark(logo, 'fade-down', 0.04);
+  mark(pill, 'fade-up', 0.1);
+  stagger(titles, 'slide-right', 0.18, 0.08);
+  mark(rule, 'grow-x', 0.42);
+  stagger(metricCards, 'slide-right', 0.52, 0.07);
+  stagger(metricBars, 'grow-x', 0.62, 0.05);
+  mark(callout30, 'scale-in', 1.02);
+  mark(cta, 'fade-up', 1.1);
+  pulse(leftPanel, 2.3);
+  pulse(callout30, 2.8);
+}
+
 
     function enhanceSlide(index, root) {
       try {
